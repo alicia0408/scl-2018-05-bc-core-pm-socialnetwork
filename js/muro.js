@@ -3,13 +3,13 @@ const boton = document.getElementById('btn');
 boton.addEventListener('click', () => {
 
   // construyendo los elementos
-  let comments = document.getElementById('comment').value;// rescato el valor del texto que se introduces
-  document.getElementById('comment').value = '';// para mantener limpio el area de texto
+  let publicacion = document.getElementById('publi').value;// rescato el valor del texto que se introduces
+  document.getElementById('publi').value = '';// para mantener limpio el area de texto
   const cont = document.getElementById('cont');
-  const newComments = document.createElement('div');
+  const newPubli = document.createElement('div');
   const like = document.createElement('i');
   const contenedorElemento = document.createElement('p');
-  let textNewComment = document.createTextNode(comments);
+  let textNewPubli = document.createTextNode(publicacion);
   const heart = document.createElement('i');
   const trash = document.createElement('i');
 
@@ -19,19 +19,19 @@ boton.addEventListener('click', () => {
   trash.classList.add('fa', 'fa-trash', 'trash');
 
   //se complementan los elementos(se le asignan a los padres sus hijos)
-  contenedorElemento.appendChild(textNewComment);
-  newComments.appendChild(like);
-  newComments.appendChild(heart);
-  newComments.appendChild(trash);
-  newComments.appendChild(contenedorElemento);
-  cont.appendChild(newComments);
+  contenedorElemento.appendChild(textNewPubli);
+  newPubli.appendChild(like);
+  newPubli.appendChild(heart);
+  newPubli.appendChild(trash);
+  newPubli.appendChild(contenedorElemento);
+  cont.appendChild(newPubli);
 
   // se crea el evento para los iconos (el de eliminar comentario al clickear el trash, y el heart en rojo al clickear)
   heart.addEventListener('click', () => {
     heart.classList.toggle('red');
   })
   trash.addEventListener('click', () => {
-    cont.removeChild(newComments);
+    cont.removeChild(newPubli);
 
   })
   like.addEventListener('click', () => {
@@ -39,66 +39,43 @@ boton.addEventListener('click', () => {
   })
 
   document.addEventListener('DOMContentLoaded', localStorageReady);
-  agregarPublicacionesLocalStorage(comments);
+  agregarPublicacionesLocalStorage(publicacion);
 })
 
 
-/*function creandoDom(text) {
-	let text = document.getElementById('comment').value;// rescato el valor del texto que se introduces
-	document.getElementById('comment').value = '';// para mantener limpio el area de texto
-	const cont = document.getElementById('cont');
-	const newComments = document.createElement('div');
-	const like = document.createElement('i');
-	const contenedorElemento = document.createElement('p');
-	let textNewComment = document.createTextNode(text);
-	const heart = document.createElement('i');
-	const trash = document.createElement('i');
 
-	like.classList.add('fa', 'fa-thumbs-up', 'like');
-	heart.classList.add('fa', 'fa-heart', 'heart');
-	trash.classList.add('fa', 'fa-trash', 'trash');
-
-	contenedorElemento.appendChild(textNewComment);
-	newComments.appendChild(like);
-	newComments.appendChild(heart);
-	newComments.appendChild(trash);
-	newComments.appendChild(contenedorElemento);
-	cont.appendChild(newComments);
-
-	document.addEventListener('DOMContentLoaded', localStorageReady);
-	agregarPublicacionesLocalStorage(comments);
-}*/
 // mostrar datos de local storage
 function localStorageReady() {
-  let comments;
-  comments = obtenerPublicacionesLocalStorage();
-  comments.forEach(function (text) {
-    //creandoDom(text);
+  let publicacion = null;
+  publicacion = obtenerPublicacionesLocalStorage();
+  publicacion.forEach(function (text) {
+    creandoDom(text);
   });
 }
 
 //Agrega publicación a local storage
 function agregarPublicacionesLocalStorage(texto) {
-  let comments = obtenerPublicacionesLocalStorage();
-  comments.push(texto);
-  localStorage.setItem('comments', JSON.stringify(comments));
-}
+  if ((document.getElementById('publi').value === '')) {
+    alert('no puedes dejar campos vacios');
+  } else { // esto es para rescatar el valor en string de los comentarios 
+    let publicacion = document.getElementById('publi').value;
+    localStorage.setItem('publi', publicacion);// en este punto guardo publicacion en mi local storage
+  }
 
+}
 
 // Comprobar que haya elementos en local storage, retorna un arreglo
 function obtenerPublicacionesLocalStorage() {
-  let comments;
-  if (localStorage.getItem('comments') === null) {
-    comments = [];
+  let publicacion = null;
+  if (localStorage.getItem('publi') === null) {
+    publicacion = [];
   } else {
-    comments = JSON.parse(localStorage.getItem('comments'));
+    publicacion = JSON.parse(localStorage.getItem('publi'));
   }
-  return comments;
+  return publicacion;
 }
 // Eliminar publicaciones de Local Storage
 function borrarPublicacionesLocalStorage(publicacion) {
-
-
   let borrarPublicacion = publicacion.substring(0, tarea.length);
   let publicacion = obtenerPublicacionesLocalStorage();
   publicacion.forEach(function (textoArr, index) {
@@ -107,7 +84,7 @@ function borrarPublicacionesLocalStorage(publicacion) {
     }
   })
 
-  localStorage.setItem('publicacion', JSON.stringify(publicacion));
+  localStorage.setItem('publi', JSON.stringify(publicacion));
 
   return borrarTareasLocalStorage;
 }
