@@ -4,27 +4,54 @@
 <head>
 	<meta name="viewport" content="width=device-width">
 	<meta charset="UTF-8">
-	<title>Muro</title>
-	<link rel="stylesheet" href="css/main.css">
+	<title></title>
+	<link rel="stylesheet" href="main.css">
 </head>
 
 <body>
 
-	<!-- Sección textarea, botón y contenedor mensajes -->
+	<!-- Sección textarea, botón de publicaciones-->
 	<section class="center">
 		<div class="container">
 			<textarea class="txt" id="publi" placeholder="Añade un comentario..."></textarea>
 			<button type="button" id="btn">
-				<i class="fa fa-plus" aria-hidden="true"></i> Agregar</button>
-			<!-- contenedor comentarios -->
+				<i class="fa fa-plus" aria-hidden="true"></i> Publicar</button>
+			<!-- contenedor de publicaciones (texto) -->
 			<div id="cont"></div>
 		</div>
 	</section>
+	<!--textearea de comentarios y  botones-->
+	<section class="formulario">
+		<div class="container" id="caja">
+			<div class="row">
+				<div class="col-md-offset-3 col-md-6">
+					<form Name="formulario">
+						<h3>comentario</h3>
+						<textarea id="comment"></textarea><!-- caja de comentario-->
+						<div class="btn-group pull-right" role="group" aria-label="buttons-inline">
+							<button type="button" class="btn btn-primary" value="Make a Comment" onclick="makeComment()">Comenta</button>
+							<button type="button" class="btn btn-default" value="Delete all comments" onclick="deleteComments()">Elimina comentarios</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="container">
+		<div class="row">
+			<div class="col-md-offset-3 col-md-6">
+				<div id="datos"></div>
+			</div>
+		</div>
+	</section>
 
-	<!-- Script Files -->
+
+
+	<!-- archivos de script -->
 	<script src="https://use.fontawesome.com/7873633050.js"></script>
-	<script type="text/javascript" src="js/muro.js"></script>
-	<script src="comentario.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+	<script src="coment.js"></script>
+
 </body>
 
 </html>

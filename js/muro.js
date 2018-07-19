@@ -1,16 +1,25 @@
+//======================== Codigo para las publicaciones =====================================
+
 const boton = document.getElementById('btn');
 
+// funcion que ejecuta el evento del boton de publicacion,contiene el Dom y los addevenlistener de los iconos.
 boton.addEventListener('click', () => {
 
   // construyendo los elementos
   let publicacion = document.getElementById('publi').value;// rescato el valor del texto que se introduces
   document.getElementById('publi').value = '';// para mantener limpio el area de texto
   const cont = document.getElementById('cont');
+  // que contiene el textarea de la publicación
   const newPubli = document.createElement('div');
+  // se crea icono del loke
   const like = document.createElement('i');
+  // se crea la etiqueta p, que define un el texto a publicar
   const contenedorElemento = document.createElement('p');
+  // crea el texto
   let textNewPubli = document.createTextNode(publicacion);
+  // se crea el elemento heart
   const heart = document.createElement('i');
+  // se crea el elemento de trash (para eliminar)
   const trash = document.createElement('i');
 
   // agregando atributos (iconos)
@@ -44,7 +53,7 @@ boton.addEventListener('click', () => {
 
 
 
-// mostrar datos de local storage
+// funcion que ejecuta mostrar datos de local storage
 function localStorageReady() {
   let publicacion = null;
   publicacion = obtenerPublicacionesLocalStorage();
@@ -53,7 +62,7 @@ function localStorageReady() {
   });
 }
 
-//Agrega publicación a local storage
+// funcion que ejecuta Agrega publicación a local storage
 function agregarPublicacionesLocalStorage(texto) {
   if ((document.getElementById('publi').value === '')) {
     alert('no puedes dejar campos vacios');
@@ -74,6 +83,7 @@ function obtenerPublicacionesLocalStorage() {
   }
   return publicacion;
 }
+
 // Eliminar publicaciones de Local Storage
 function borrarPublicacionesLocalStorage(publicacion) {
   let borrarPublicacion = publicacion.substring(0, tarea.length);
