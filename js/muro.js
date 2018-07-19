@@ -1,4 +1,4 @@
-//======================== Codigo para las publicaciones =====================================
+
 
 const boton = document.getElementById('btn');
 

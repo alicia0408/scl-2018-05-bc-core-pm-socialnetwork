@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link rel="stylesheet" href="css/login.css">
 
-  <title>login</title>
 </head>
 
 <body>
@@ -21,50 +20,40 @@
       <div class="row">
         <div class="col-12 col-md-12">
           <img src="img/logoFemmesText.png" alt="logotipo">
-          <h1>SIGN IN</h1>
+
           <br>
-          <!-- LINKEAR FACEBOOK -->
-          <div class="logearse">
-            <div class="row">
-              <div id="facebook" class="col-6">
-                <a href="#" id="facebookButton" class="btn btn-lg btn-block omb_btn-facebook">
-                  <i class="fab fa-facebook-f rounded-circle"></i>
-                </a>
-              </div>
-              <!-- LINKEAR GOOGLE -->
-              <div id="google" class="col-6">
-                <a href="#" class="btn btn-lg btn-block omb_btn-google">
-                  <i class="fab fa-google rounded-circle"></i>
-                </a>
+
+
+          <!--correo electronico-->
+          <div class="row">
+            <div class="col-10 col-md-5 mx-auto">
+              <div class="form-group login-form">
+                <input id="txtEmail" type="email" class="form-control pd" placeholder="email" required="required">
+                <input id="txtPassword" type="password" class="form-control pd" placeholder="Password" required="required">
+                <div class="row">
+                  <br>
+                  <button id="loginButton" onclick="loginWithFirebase()" class="btn btn-lg btn-primary btn-block text-center justify-center"
+                    type="submit">Ingresar</button>
+
+
+                  <!-- LINKEAR FACEBOOK -->
+                  <div class="col-12">
+                    <button class="btn btn-block" onclick="facebookLoginwithFireBase()">
+                      <i class="" fab fa-facebook-f rounded-circle></i> Sign in facebook</button>
+                    <a href="#" id="facebookButton" class="btn btn-lg btn-block omb_btn-facebook">
+                  </div>
+
+                  <!-- INGRESA CON google-->
+                  <div class="col-12">
+                    <button class="btn btn-secondary inline pd full green-two" onclick="googleLoginwithFireBase()">
+                      <i class="fab fa-google"></i> Sign in google</button>
+                  </div>
+                  <h4>¿NO TIENES CUENTA? REGÍSTRATE</h4>
+                  <input id="registerButton" onclick="registerWithFirebase()" type="button" value="REGISTER">
+
+                </div>
               </div>
             </div>
-          </div>
-          <!-- INGRESA CON CORREO-->
-          <div class="ingresa">
-            <form action="" class="">
-              <!--correo electronico-->
-              <div class="input-group">
-                <span class="input-group-addon"></span>
-                <input id="email" type="text" class="form-control" name="username" placeholder="email address">
-              </div>
-              <!--correo electronico-->
-
-              <!--contraseña-->
-              <div class="input-group">
-                <span class="input-group-addon"></span>
-                <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-              </div>
-              <!--contraseña-->
-              <button id="loginButton" onclick="loginWithFirebase()" class="btn btn-lg btn-primary btn-block text-center justify-center"
-                type="submit">Ingresar</button>
-            </form>
-          </div>
-          <h4>¿Olvidaste tu contraseña?</h4>
-          <input id="registerButton" onclick="registerWithFirebase()" type="button" value="REGISTER">
-          <h5>¿NO TIENES CUENTA? REGÍSTRATE</h5>
-        </div>
-      </div>
-    </div>
   </section>
 
   <footer>
@@ -83,11 +72,6 @@
     </script>
     <script src="js/app.js"></script>
   </footer>
-
-
-
-
-
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous">
     </script>

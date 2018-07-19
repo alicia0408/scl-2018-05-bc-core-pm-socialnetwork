@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <body>
+        <body>
+            <div>
+                <!--Login-->
+                <div id="loggedIn">
+                    <p id="username"></p>
+                    <input id="logout" onclick="logoutWithFirebase()" type="button" value="LOGOUT">
+                </div>
+                
+                <div id="loggedOut">
+                    <input id="email" type="email">
+                    <input id="password" type="password">
+                    <input id="registerButton" onclick="registerWithFirebase()" type="button" value="REGISTER">
+                    <input id="loginButton" onclick="loginWithFirebase()" type="button" value="LOGIN">
+                    <!--Autentificación con facebook-->
+                    <input id="facebookButton" onclick="facebookLoginWithFirebase()" type="button" value="FACEBOOK LOGIN">
+                </div>
+              
+
+    </body>
+    <footer>
+        <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyApswAEcggehocM-_C3o59SIclBYguurLg",
+                authDomain: "social-network-7e12c.firebaseapp.com",
+                databaseURL: "https://social-network-7e12c.firebaseio.com",
+                projectId: "social-network-7e12c",
+                storageBucket: "social-network-7e12c.appspot.com",
+                messagingSenderId: "734562839994"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script src="js/muroC.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+
+
+
+</footer>

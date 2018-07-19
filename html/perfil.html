@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <link rel="stylesheet" href="../css/perfil.css">
+   
+    <title>Perfil</title>
+</head>
+
+<body>
+<!-- Perfil / Menu -->
+        <header id="menu">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <img src="../img/logoBlanco.png" alt="">        
+                <a class="navbar-brand" href="#"></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Muro</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link" href="#">Perfil</a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="busqueda">
+                            <button id="ir" class="btn btn-outline-success my-2 my-sm-0" type="submit">Ir</button>
+                        </form>
+                    </div>
+                </nav>
+            </header>
+
+
+
+            <!-- Div de avatar y datos personales-->
+                <div class="container-fluid"> 
+                    <div class="row">
+                        <div id="box1" class="col-6 col-md-4">
+                           <div class="rounded mx-auto d-block" style="width: 12rem; height: 12rem;">
+                               <img class="card-img rounded-circle rounded mx-auto d-block" src="../img/perfil.jpg" alt="">
+                                  <div class="card-body">
+                                     <button type="button" class="btn btn-secondary btn-sm">Small button</button>
+                                 </div>
+                            </div>
+                        </div>     
+                        <div id="box" class="col-6 col-md-4">
+                            <div class="card-body" style="width: 12rem;">
+                                <div class="rounded mx-auto d-block">
+                                    <h5 class="card-title">Julieta anais</h5>
+                                        <a href="#" class="btn btn-primary">Editar</a>
+                                </div>
+                            </div>
+                        </div>    
+                            <div class="container-fluid"> 
+                               <div class="row">
+                                   <div id="box3" class="col-12 col-md-4">
+                                       <div>
+                                          <a href="#" class="btn btn-lg btn-block">Amigos</a>
+                                        </div> 
+                                    </div> 
+                                     <div id="box3" class="col-12 col-md-4">
+                                        <div>
+                                          <a href="#" class="btn btn-lg btn-block">Información</a>
+                                        </div> 
+                                    </div>  
+                                      <div id="box3" class="col-12 col-md-4">
+                                            <div>
+                                              <a href="#" class="btn btn-lg btn-block">Fotos</a>
+                                            </div> 
+                                      </div>  
+                                </div>
+                            </div>
+                            <div class="container-fluid"> 
+                                 <div class="row">
+                                     <div id="box5" class="col-12 col-md-12">
+                                        <a id="tash" class="rounded float-right"><i class="far fa-trash-alt"></i></a>
+                                        <input id="publicacion" type="text" class="rounded mx-auto d-block text-center" placeholder="Aquí....">
+                                        <button id="publica" type="button" class="btn btn-sm rounded float-right">Publicar</button>
+                                        <a id="meGusta" class="rounded float-left"><i class="fas fa-hands-helping"></i> 10</a>
+                                        <a id="comentario" class="rounded float-left"><i class="fas fa-comment-dots"></i> 10</a>
+                                      </div>
+                                    </div>
+                                </div>     
+                              
+
+<!-- se que esto es mala practica es solo mientras  -->
+
+
+<script>
+    window.addEventListener('load', init, false);
+
+    function init() {
+        var inputFile = document.querySelector('#inputFile1');
+        inputFile.addEventListener('change', mostrarImagen, false);
+    }
+
+    function mostrarImagen(e) {
+        var img = document.querySelector('#img1');
+        var inputFile = document.querySelector('#inputFile1');
+        img.src = inputFile.value;
+    }
+</script>       
+
+
+
+<script
+ src="https://code.jquery.com/jquery-3.3.1.min.js"
+ integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+ crossorigin="anonymous">
+</script>
+<script src="../bootstrap/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+
+</html>
